@@ -1,0 +1,56 @@
+﻿<Window x:Class="Omnirig_Demo_WPF_CS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Omnirig_Demo_WPF_CS"
+        mc:Ignorable="d"
+        Title="OmniRig C# WPF .NET 2017 Demo" Height="157" Width="513" Loaded="Window_Loaded" ResizeMode="NoResize">
+    <Grid Background="#FFECEAEA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="1" Grid.Row="1" Content="RX" />
+        <Label Grid.Column="3" Grid.Row="1" Content="TX" />
+        <Label Grid.Column="5" Grid.Row="1" Content="Mode" />
+        <Label Grid.Column="7" Grid.Row="1" Content="Status" />
+        <RadioButton  Grid.Column="9" Grid.Row="1" Content="RIG1" Name="rdbRig1" Click="RadioButton1_Click" />
+        <RadioButton Grid.Column="11" Grid.Row="1" Content="RIG2" Name="rdbRig2" Click="RadioButton2_Click" />
+
+        <Label Grid.Column="1" Grid.Row="3" Content="{Binding Path=RX, ValidatesOnDataErrors=true, NotifyOnValidationError=true,  UpdateSourceTrigger=PropertyChanged}" />
+        <Label Grid.Column="3" Grid.Row="3" Content="{Binding Path=TX, ValidatesOnDataErrors=true, NotifyOnValidationError=true,  UpdateSourceTrigger=PropertyChanged}" />
+        <Label Grid.Column="5" Grid.Row="3" Content="{Binding Path=Mode}"/>
+        <Label Grid.Column="7" Grid.Row="3" Content="{Binding Path=Status}" />
+        <Button Grid.Column="13" Grid.Row="3" Content="OminiRig Settings"  Click="BtnOmniRigSettings_Click"/>
+
+        <ComboBox Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Name="cmbMode" SelectionChanged="ModeSelectionChanged"/>
+        <TextBox Grid.Column="5" Grid.Row="5" Grid.ColumnSpan="5" Text="{Binding Path=Frequency, ValidatesOnDataErrors=true, NotifyOnValidationError=true,  UpdateSourceTrigger=PropertyChanged}" />
+        <Button Grid.Column="13" Grid.Row="5" Content="Set Frequency" Click="BtnSetFrequency_Click"/>
+
+    </Grid>
+</Window>
